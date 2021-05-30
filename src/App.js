@@ -7,11 +7,14 @@ import AddFilm from "./components/pages/AddFilm";
 import ListFilm from "./components/pages/ListFilm";
 import DetailFilm from "./components/pages/DetailFilm";
 import Profile from "./components/pages/Profile";
+import TransactionList from "./components/pages/TransactionList";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./styles/global.css";
 
 import Navbar from "./components/Navbar/Navbar";
+
 function App() {
   return (
     <>
@@ -25,6 +28,7 @@ function App() {
             <Route path="/addfilm" exact component={AddFilm}></Route>
             <Route path="/films/:id" exact component={DetailFilm}></Route>
             <Route path="/profile" exact component={Profile}></Route>
+            <Route path="/translist" exact component={TransactionList}></Route>
           </Switch>
         </Router>
       </UserContextProvider>

@@ -35,7 +35,10 @@ function DetailFIlm() {
   return (
     <>
       <FormModal show={showBuy} handleClose={handleCloseBuy}>
-        <BuyModal show={showBuy} handleClose={handleCloseBuy}></BuyModal>
+        <BuyModal
+          show={showBuy}
+          handleClose={() => setShowBuy(false)}
+        ></BuyModal>
       </FormModal>
       <div className="film-container">
         <div className="film-content">
@@ -45,7 +48,7 @@ function DetailFIlm() {
           <div className="title-buy">
             <h3>{film.tittle}</h3>
 
-            <button className="hero-link" onClick={() => handleShowBuy}>
+            <button className="hero-link" onClick={handleShowBuy}>
               Buy Now
             </button>
           </div>

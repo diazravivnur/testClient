@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { API } from "../../config/api";
 import { useParams } from "react-router-dom";
-import ReactDom from "react-dom";
+
 import { UserContext } from "../../contexts/userContext";
 
 function BuyModal({ show, handleClose }) {
@@ -47,23 +47,23 @@ function BuyModal({ show, handleClose }) {
   };
 
   if (!show) return null;
-  return ReactDom.createPortal(
+  return (
     <>
-      <div className="dark-overlay" onClick={handleClose}></div>
-      <div className="modal-donate">
-        <div className="modal-sample-content">
+      <div className="modal-content" onClick={handleClose}></div>
+      <div className="modal1">
+        <div className="title-modal1">
           <form
             onSubmit={(e) => {
               e.preventDefault();
               handleSubmit();
             }}
           >
-            <div className="input-group-sample">
+            <div className="form-modal1">
               <input
                 type="number"
                 name="accountNumber"
                 placeholder="Input Your Account Number"
-                className=" grab-input"
+                className="input-modal1"
                 onChange={(e) => onChange(e)}
               ></input>
 
@@ -74,6 +74,7 @@ function BuyModal({ show, handleClose }) {
                 }}
               >
                 <input
+                  className="input-modal1"
                   type="file"
                   id="add-thumb"
                   name="transferProof"
@@ -81,6 +82,7 @@ function BuyModal({ show, handleClose }) {
                   hidden
                 />
                 <label
+                  className="hero-link"
                   for="add-thumb"
                   id="label-thumb"
                   style={{
@@ -90,13 +92,15 @@ function BuyModal({ show, handleClose }) {
                 >
                   Attach Thumbnail
                 </label>
-                <p
-                  style={{
-                    width: "70%",
-                  }}
-                >
-                  *transfers can be made to cinema accounts
-                </p>
+                <div className="">
+                  <p
+                    style={{
+                      width: "70%",
+                    }}
+                  >
+                    *transfers can be made to cinema accounts
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -110,8 +114,7 @@ function BuyModal({ show, handleClose }) {
           </form>
         </div>
       </div>
-    </>,
-    document.getElementById("portal")
+    </>
   );
 }
 

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../../contexts/userContext";
-// import ModalLogin from "../modal/Login";
 
 function Hero() {
   const [state] = useContext(UserContext);
@@ -30,10 +29,6 @@ function Hero() {
                 >
                   Buy Now
                 </div>
-                {/* <ModalLogin
-                  open={isOpen}
-                  onClose={() => setIsOpen(false)}
-                ></ModalLogin> */}
               </>
             ) : (
               <div
