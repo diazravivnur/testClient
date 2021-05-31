@@ -27,21 +27,25 @@
 .form-modal1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   width: 100%;
 }
-
+.noteBuyModal {
+  font-size: 12px;
+  color: gray;
+}
 .input-modal1 {
   color: "white";
   background: rgba(210, 210, 210, 0.25);
   border: 2px solid #bcbcbc;
   box-sizing: border-box;
-  width: 100%;
-  height: 42px;
+  width: 417;
+  height: 45px;
   padding: 7px;
   margin-bottom: 22px;
   border-radius: 5px;
   outline: none;
+  font-size: medium;
 }
 .input-modal1 p {
   color: cyan;
@@ -60,6 +64,21 @@
   font-weight: bold;
 }
 
+.pay-hero-link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-decoration: none;
+  width: 417px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 900;
+  background-color: #cd2e71;
+  color: #fff;
+  cursor: pointer;
+}
+
 .text-modal1 {
   margin-top: 15px;
   font-weight: 550;
@@ -71,4 +90,45 @@
   font-weight: 900;
   text-decoration: none;
   color: white;
+}
+
+/* Buy Modal */
+
+.total-payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.attach-note {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: right;
+}
+
+.modal-buy {
+  background-color: black;
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+  margin-top: 10%;
+  border-radius: 10px;
+}
+.modal-buy h3 {
+  color: white;
+}
+.modal-buy h4 {
+  color: white;
+}
+
+.total-payment-number h4 {
+  color: #cd2e71;
+}
+
+.header h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 43px;
 }

@@ -1,17 +1,22 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { API } from "../../config/api";
 import { useParams } from "react-router-dom";
+import { Image } from "react-bootstrap";
 
 import { UserContext } from "../../contexts/userContext";
+
+import Transferpayment from "../../components/pictures/Transferpayment.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function BuyModal({ show, handleClose }) {
   const params = useParams();
   const { id } = params;
+  const [preview, setPreview] = useState();
   const [, dispatch] = useContext(UserContext);
 
   const [form, setForm] = useState({
     accountNumber: "",
-    transferProof: null,
+    transferProof: "",
   });
 
   const onChange = (e) => {
@@ -50,7 +55,18 @@ function BuyModal({ show, handleClose }) {
   return (
     <>
       <div className="modal-content" onClick={handleClose}></div>
-      <div className="modal1">
+
+      <div className="modal-buy">
+        <div className="header">
+          <h3>Cinema Online : </h3>
+        </div>
+        <h3>Judul Film</h3>
+        <div className="total-payment">
+          <h4> Total : </h4>
+          <div className="total-payment-number">
+            <h4> Rp.5000 </h4>
+          </div>
+        </div>
         <div className="title-modal1">
           <form
             onSubmit={(e) => {
@@ -81,25 +97,15 @@ function BuyModal({ show, handleClose }) {
                   onChange={(e) => onChange(e)}
                   hidden
                 />
-                <label
-                  className="hero-link"
-                  for="add-thumb"
-                  id="label-thumb"
-                  style={{
-                    marginRight: "50px",
-                    width: "50%",
-                  }}
-                >
-                  Attach Thumbnail
-                </label>
-                <div className="">
-                  <p
-                    style={{
-                      width: "70%",
-                    }}
-                  >
-                    *transfers can be made to cinema accounts
-                  </p>
+                <div className="attach-note">
+                  <label className="hero-link" for="add-thumb" id="label-thumb">
+                    Attach Payment
+                    <img alt="icon payment" src={Transferpayment} />
+                  </label>
+
+                  <div className="noteBuyModal">
+                    <p>*transfers can be made to cinema accounts</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -107,7 +113,7 @@ function BuyModal({ show, handleClose }) {
             <button
               type="submit"
               style={{ textAlign: "center" }}
-              className="modal-sample-link"
+              className="pay-hero-link"
             >
               Pay
             </button>

@@ -112,6 +112,12 @@ button:hover {
   background-color: black;
 }
 
+.dropdown-menu.show {
+  background-color: black;
+}
+.dropdown-menu::after {
+}
+
 .navbar1 .nav-link1 ul .link-register {
   padding: 10px 20px;
   text-align: center;
